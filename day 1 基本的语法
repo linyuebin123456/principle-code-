@@ -1,0 +1,15 @@
+给出圆的半径，求出来周长和面积
+import math
+radius = float(input("radius = "))
+perimeter = 2 * math.pi * radius
+area = math.pi * radius**2
+print("半径为%.2f时，周长为%.2f" % (radius, perimeter))
+print("半径为%.2f时，面积为%.2f" % (radius, area))
+
+
+输入年份判断是不是闰年
+year = int(input("year = "))
+if year %4 ==0:
+    print("今年是闰年")
+else:
+    print("%d年不是闰年" % year)
