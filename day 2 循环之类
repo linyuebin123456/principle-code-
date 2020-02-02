@@ -1,0 +1,17 @@
+import numpy as np
+number = np.random.randint(1, 100)
+count = 0
+while True:
+    count += 1
+    answer = int(input("please input your answer: "))
+    if answer < number:
+        print("猜的小了")
+    elif answer > number:
+        print("猜的大了")
+    else:
+        print("你可真是个小聪明")
+        break
+print("你一共猜了%d次" % count)
+if count>7:
+    print("你就是个蠢逼")
+
