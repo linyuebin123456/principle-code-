@@ -19,7 +19,7 @@ if count>7:
 除了break之外，还有另一个关键字是continue，它可以用来放弃本次循环后续的代码直接让循环进入下一轮。
 
 
-
+计算素数
 from math import sqrt
 number = int(input("请输入一个数字:"))
 end = int(sqrt(number))
@@ -32,5 +32,45 @@ if is_prime and number !=1:
     print('%d是素数' % number)
 else:
     print('%d不是素数' % number)
+
+
+
+
+
+计算纸牌之类
+import numpy as np
+money = 1000
+count = 0
+while money > 0:
+    print("你现在有:", money)
+    needs_go_on = False
+    debt = int(input("请输入一定金额的底注:"))
+    while True:
+        if 0 < debt <= money:
+            break
+    first_throw = np.random.randint(1, 6) + np.random.randint(1, 6)
+    if first_throw == 7 or first_throw == 11:
+        print("玩家获胜")
+        money = money + debt
+    elif first_throw == 2 or first_throw == 3 or first_throw == 12:
+        print("庄家获胜")
+        money = money - debt
+    else:
+        needs_go_on = True
+    while needs_go_on:
+        needs_go_on = False
+        current = np.random.randint(1, 6) + np.random.randint(1, 6)
+        if current == 7:
+            print("庄家获胜")
+            money = money - debt
+        elif current == first_throw:
+            print("玩家获胜")
+            money = money + debt
+        else:
+            needs_go_on = True
+    count += 1
+
+print("你现在还剩下了：", money)
+print("你一共玩了:", count)
 
 
