@@ -74,3 +74,28 @@ print("你现在还剩下了：", money)
 print("你一共玩了:", count)
 
 
+
+斐波那契数列
+def fei(n):
+    if n == 1 or n ==2 :
+        return 1
+    else:
+        m = fei(n-1) + fei(n-2)
+        return m
+
+
+list0 = []
+try:
+    k = int(input("enter: "))
+except ValueError:
+    print("请输入整数")
+temp = 1
+while temp <= k:
+    list0.append(fei(temp))
+    temp += 1
+print(list0)
+
+
+
+
+
